@@ -1,0 +1,33 @@
+{
+  "name": "learning-three.js-by-oreilly",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot --no-info --content-base docs/",
+    "server": "browser-sync start --server 'docs'",
+    "build:html": "pug src/pug/views -o docs -P",
+    "build:css": "node-sass --output-style compressed -o docs/css src/scss",
+    "build:js": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build": "npm-run-all build:*",
+    "watch:html": "pug src/pug/views -o docs -P -w",
+    "watch:css": "npm run build:css -- --watch",
+    "watch": "npm-run-all --parallel dev watch:*"
+  },
+  "author": "soarflat",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "cross-env": "^5.0.5",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "pug": "^2.0.0-rc.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "webpack": "^3.7.1",
+    "webpack-dev-server": "^2.8.1"
+  },
+  "dependencies": {
+    "reset-css": "^2.2.0",
+    "three": "^0.87.1"
+  }
+}

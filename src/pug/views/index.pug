@@ -1,0 +1,19 @@
+extends ../include/_layout
+block var
+  - title = 'Learning Three.js'
+  - path = './'
+block body
+  header
+    h1 Learning Three.js
+
+  section
+    h2 chapter1
+    ul
+      -
+        var list = [
+        '01-basic-skeleton'
+        ]
+      each item in list
+        li
+          a(href="chapter-01/" + item + ".html") #{item}
+block end_of_body

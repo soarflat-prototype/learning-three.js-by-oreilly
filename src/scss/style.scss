@@ -1,0 +1,33 @@
+@import 'node_modules/reset-css/_reset';
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+header {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+section {
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+a {
+  color: #fff;
+}
+
+ul {
+  > li {
+    margin-top: 20px;
+  }
+}
