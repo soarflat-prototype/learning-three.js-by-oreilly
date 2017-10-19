@@ -4,10 +4,12 @@ const path = require('path');
 module.exports = {
   entry: {
     'chapter-01/01-basic-skeleton': './src/js/chapter-01/01-basic-skeleton',
+    'chapter-01/02-first-scene': './src/js/chapter-01/02-first-scene',
   },
   output: {
     filename: '[name].js',
     path: path.join(__dirname, 'docs/js'),
+    publicPath: "/js/"
   },
   module: {
     rules: [{
