@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     'chapter-01/01-basic-skeleton': './src/js/chapter-01/01-basic-skeleton',
     'chapter-01/02-first-scene': './src/js/chapter-01/02-first-scene',
+    'chapter-01/03-materials-light': './src/js/chapter-01/03-materials-light',
   },
   output: {
     filename: '[name].js',
