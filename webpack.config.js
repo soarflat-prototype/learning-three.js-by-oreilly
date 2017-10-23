@@ -7,6 +7,7 @@ module.exports = {
     'chapter-01/02-first-scene': './src/js/chapter-01/02-first-scene',
     'chapter-01/03-materials-light': './src/js/chapter-01/03-materials-light',
     'chapter-01/04-materials-light-animation': './src/js/chapter-01/04-materials-light-animation',
+    'chapter-01/05-control-gui': './src/js/chapter-01/05-control-gui',
   },
   output: {
     filename: '[name].js',
