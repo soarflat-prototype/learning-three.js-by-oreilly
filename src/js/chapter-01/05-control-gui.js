@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import stats from '../util/stats';
-import dat from 'dat.gui/build/dat.gui.js';
+import dat from 'dat-gui';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -8,6 +8,9 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setClearColor(new THREE.Color(0xEEEEEE));
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
+
+const axes = new THREE.AxisHelper(20);
+scene.add(axes);
 
 const planeGeometry = new THREE.PlaneGeometry(60, 20);
 const planeMaterial = new THREE.MeshLambertMaterial({ color: 0xffffff });
@@ -60,11 +63,17 @@ let step = 0;
 const controls = new function () {
   this.rotationSpeed = 0.02;
   this.bouncingSpeed = 0.03;
+  this.cameraPositionX = -30;
+  this.cameraPositionY = 40;
+  this.cameraPositionZ = 30;
 };
 
 const gui = new dat.GUI();
 gui.add(controls, 'rotationSpeed', 0, 0.5);
 gui.add(controls, 'bouncingSpeed', 0, 0.5);
+gui.add(controls, 'cameraPositionX', -100, 100);
+gui.add(controls, 'cameraPositionY', -100, 100);
+gui.add(controls, 'cameraPositionZ', -100, 100);
 
 renderScene();
 
@@ -80,6 +89,10 @@ function renderScene() {
   step += controls.bouncingSpeed;
   sphere.position.x = 20 + ( 10 * (Math.cos(step)));
   sphere.position.y = 2 + ( 10 * Math.abs(Math.sin(step)));
+
+  camera.position.x = controls.cameraPositionX;
+  camera.position.y = controls.cameraPositionY;
+  camera.position.z = controls.cameraPositionZ;
 
   renderer.render(scene, camera);
 }
